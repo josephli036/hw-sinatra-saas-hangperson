@@ -24,7 +24,7 @@ class HangpersonGame
   
   def guess letter
     if letter == '' or letter == nil or letter.match(/[a-zA-Z]/).nil?
-      raise(ArgumentError)
+      raise ArgumentError, "Invalid guess"
     elsif !@wrong_guesses.match(/.*#{letter}.*/i).nil? or !@guesses.match(/.*#{letter}.*/i).nil?
       return false
     end
